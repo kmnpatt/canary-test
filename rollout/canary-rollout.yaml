@@ -4,7 +4,7 @@ kind: Rollout # Changed from Deployment
 metadata:
   name: example-rollout
 spec:
-  replicas: 3
+  replicas: 2
   selector:
     matchLabels:
       app: nginx

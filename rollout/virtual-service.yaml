@@ -6,12 +6,13 @@ spec:
   gateways:
     - istio-rollout-gateway
   hosts:
-    - "*"
+    - istio-rollout.dev.argoproj.io
   http:
-    - route:
-      - destination:
-          host: stable-svc
-        weight: 95
-      - destination:
-          host: canary-svc
-        weight: 5
+    - name: primary
+      route:
+        - destination:
+            host: stable-svc
+          weight: 95
+        - destination:
+            host: canary-svc
+          weight: 5
