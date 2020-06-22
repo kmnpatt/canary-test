@@ -32,4 +32,4 @@ spec:
            virtualService: 
             name: rollout-vsvc  # required
             routes:
-            - stable-svc # At least one route is required
+            - primary # At least one route is required
