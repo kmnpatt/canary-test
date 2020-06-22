@@ -6,9 +6,9 @@ spec:
   gateways:
     - istio-rollout-gateway
   hosts:
-    - istio-rollout.dev.argoproj.io
+    - "*"
   http:
-    route:
+    - route:
       - destination:
           host: stable-svc
         weight: 95
