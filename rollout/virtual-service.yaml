@@ -12,7 +12,7 @@ spec:
       route:
         - destination:
             host: stable-svc
-          weight: 95
+          weight: 100
         - destination:
             host: canary-svc
-          weight: 5
+          weight: 0

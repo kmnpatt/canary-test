@@ -24,7 +24,9 @@ spec:
   # ----- Everything above this comment are the same as a deployment -----
     canary: # A new field that used to provide configurable options for a Canary strategy
       steps:
-      - setWeight: 20
+      - setWeight: 5
+      - pause:
+          duration: 10m
       canaryService: canary-svc # required
       stableService: stable-svc  # required
       trafficRouting:
