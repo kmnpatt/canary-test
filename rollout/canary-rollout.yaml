@@ -25,13 +25,13 @@ spec:
     canary: # A new field that used to provide configurable options for a Canary strategy
       steps:
       - setWeight: 20
-      # - pause:
-      #     duration: 10m
-      # canaryService: canary-svc # required
-      # stableService: stable-svc  # required
-      # trafficRouting:
-      #   istio:
-      #      virtualService: 
-      #       name: rollout-vsvc  # required
-      #       routes:
-      #       - primary # At least one route is required
+      - pause:
+          duration: 10m
+      canaryService: canary-svc # required
+      stableService: stable-svc  # required
+      trafficRouting:
+        istio:
+           virtualService: 
+            name: rollout-vsvc  # required
+            routes:
+            - primary # At least one route is required
