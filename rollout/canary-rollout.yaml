@@ -7,31 +7,31 @@ spec:
   replicas: 2
   selector:
     matchLabels:
-      app: nginx
+      app: nodejs
   template:
     metadata:
       labels:
-        app: nginx
+        app: nodejs
     spec:
       containers:
-      - name: nginx
-        image: nginx:1.15.4
+      - name: nodejs
+        image: kmnpat/node-demo
         ports:
-        - containerPort: 80
+        - containerPort: 8081
   minReadySeconds: 30
   revisionHistoryLimit: 3
   strategy:
   # ----- Everything above this comment are the same as a deployment -----
     canary: # A new field that used to provide configurable options for a Canary strategy
       steps:
-      - setWeight: 5
-      - pause:
-          duration: 10m
-      canaryService: canary-svc # required
-      stableService: stable-svc  # required
-      trafficRouting:
-        istio:
-           virtualService: 
-            name: rollout-vsvc  # required
-            routes:
-            - primary # At least one route is required
+      - setWeight: 20
+      # - pause:
+      #     duration: 10m
+      # canaryService: canary-svc # required
+      # stableService: stable-svc  # required
+      # trafficRouting:
+      #   istio:
+      #      virtualService: 
+      #       name: rollout-vsvc  # required
+      #       routes:
+      #       - primary # At least one route is required

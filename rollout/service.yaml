@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: stable-svc
   labels:
-    app: nginx
+    app: nodejs
     service: stable-svc
 spec:
   ports:
@@ -12,14 +12,14 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: nginx
+    app: nodejs
 ---
 apiVersion: v1
 kind: Service
 metadata:
   name: canary-svc
   labels:
-    app: nginx
+    app: nodejs
     service: canary-svc
 spec:
   ports:
@@ -28,4 +28,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    app: nginx
+    app: nodejs
