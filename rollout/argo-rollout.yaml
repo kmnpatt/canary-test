@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: nodejs
-        image: kmnpat/node-demo
+        image: kmnpat/node-demo-v2
         ports:
         - containerPort: 8081
   minReadySeconds: 30
