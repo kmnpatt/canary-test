@@ -8,11 +8,12 @@ metadata:
 spec:
   ports:
     - port: 8081
-      targetPort: http
+      targetPort: 8081
       protocol: TCP
       name: http
   selector:
     app: nodejs
+  type: NodePort
 ---
 apiVersion: v1
 kind: Service
@@ -24,8 +25,9 @@ metadata:
 spec:
   ports:
     - port: 8081
-      targetPort: http
+      targetPort: 8081
       protocol: TCP
       name: http
   selector:
     app: nodejs
+  type: NodePort
